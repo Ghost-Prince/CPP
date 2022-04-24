@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    int tc=0;
+    cin>>tc;
+    while(tc--) {
+        int rat=0;
+        cin>>rat;
+        if(rat<=1399) {
+            cout<<"Division 4"<<endl;
+        }
+        else if(rat>=1400 && rat<=1599) {
+            cout<<"Division 3"<<endl;
+        }
+        else if(rat>=1600 && rat<=1899) {
+            cout<<"Division 2"<<endl;
+        }
+        else {
+            cout<<"Division 1"<<endl;
+        }
+    }
+    return 0;
+}
