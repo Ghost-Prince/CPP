@@ -1,0 +1,6 @@
+n_eng=int(input())
+eng=set(map(int,input().split()))
+n_french=int(input())
+french=set(map(int,input().split()))
+total=eng.union(french)
+print(len(total))
