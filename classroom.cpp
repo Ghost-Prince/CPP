@@ -10,6 +10,9 @@ class student {
     float getID() {
         return ID;
     }
+    float getGPA() {
+        return GPA;
+    }
     student() {
         ID=0;
         first_name="";
@@ -80,6 +83,7 @@ int main() {
         s1.Get(ID,first,last,age,gpa);
         arr.push_back(s1);
     }
+    sort(arr.begin(),arr.end(),[](student a, student b) {return a.getGPA() < b.getGPA();});
     for(student& stu: arr) {
         stu.Put();
     }
