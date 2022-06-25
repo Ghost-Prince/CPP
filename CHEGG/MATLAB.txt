@@ -1,0 +1,8 @@
+x = 7 
+if(x>=0) && (x<=3)
+    fx= -x-4
+elseif (x>3) && (x<=10)
+    fx= x^2 -7
+elseif (x>10)
+    fx= 120/x + 5
+end
