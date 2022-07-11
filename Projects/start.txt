@@ -1,0 +1,3 @@
+cd C:\Users\adeeb\Desktop\CPP\Projects
+python drink-water-notification.py
+exit
