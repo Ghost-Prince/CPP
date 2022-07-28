@@ -5,28 +5,25 @@ public:
     int val;
     TreeNode* left;
     TreeNode* right;
-    TreeNode(int val) {
-        this->val=val;
-        this->left=NULL;
-        this->right=NULL;
-    }
-    void mapper(TreeNode* root, unordered_map<TreeNode*,int>& mp) {
-        if(root==NULL) return;
-        mp[root]++;
-        mapper(root->left,mp);
-        mapper(root->right,mp);
+    unordered_map<string,vector<TreeNode*>> mp;
+    string helper(TreeNode* root) {
+        if(root==NULL) return "";
+        string l=helper(root->left), r=helper(root->right);
+        string str=to_string(root->val) + "." + l + "." + r;
+        mp[str].push_back(root);
+        return str;
     }
     vector<TreeNode*> findDuplicateSubtrees(TreeNode* root) {
-        unordered_map<TreeNode*,int> mp;
-        mapper(root,mp);
+        helper(root);
         vector<TreeNode*> ans;
         for(auto& it: mp) {
-            if(it.second>1) ans.push_back(it.first);
-        } 
+            if(it.second.size()>1) {
+                ans.push_back(it.second[0]);
+            }
+        }
         return ans;
     }
 };
 int main() {
-
     return 0;
 }
